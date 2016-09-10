@@ -58,12 +58,22 @@ public class Product {
 			priceSpaces += " ";
 		}
 		
+		int numStockCharMax = 4;
+		String numStockSpaces = "";
+		int numNumStockSpaces = numStockCharMax - Integer.toString(num_in_stock).length();
+		for (int i = 0; i < numNumStockSpaces; i++) {
+			numStockSpaces += " ";
+		}
 		
+		
+		//  The following composes the string to be printed.
+		//  Some fields have their pieces in different orders
+		//     depending on whether it should be right or left aligned.
 		String str = "ID:  " + id + idSpaces + 
 				"    Category:  " + category + categorySpaces + 
 				"    Name:  " + name + nameSpaces + 
-				"    Price:  $" + price + priceSpaces +
-				"    Num_In_Stock:  " + num_in_stock;
+				"    Price:  " + priceSpaces + "$" + price +
+				"    Num_In_Stock:  " + numStockSpaces + num_in_stock;
 		return str;
 		// Damn I'm good!
 	}
