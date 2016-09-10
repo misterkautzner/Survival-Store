@@ -51,9 +51,12 @@ public class Product {
 			nameSpaces += " ";
 		}
 		
+		//  Creating a string for price formatted with 2 decimal digits.
+		String priceStr = String.format("%.2f",  price);
+		
 		int priceCharMax = 7;
 		String priceSpaces = "";
-		int numPriceSpaces = priceCharMax - Double.toString(price).length();
+		int numPriceSpaces = priceCharMax - priceStr.length();
 		for (int i = 0; i < numPriceSpaces; i++) {
 			priceSpaces += " ";
 		}
@@ -65,6 +68,7 @@ public class Product {
 			numStockSpaces += " ";
 		}
 		
+
 		
 		//  The following composes the string to be printed.
 		//  Some fields have their pieces in different orders
@@ -72,7 +76,7 @@ public class Product {
 		String str = "ID:  " + idSpaces + id + 
 				"    Category:  " + category + categorySpaces + 
 				"    Name:  " + name + nameSpaces + 
-				"    Price:  " + priceSpaces + "$" + price +
+				"    Price:  " + priceSpaces + "$" + priceStr +
 				"    Num_In_Stock:  " + numStockSpaces + num_in_stock;
 		return str;
 		// Damn I'm good!
