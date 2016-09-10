@@ -11,76 +11,22 @@ public class SurvivalStore {
 	static ArrayList<Product> allProducts = new ArrayList<Product>();
 	
 	public static void main(String[] args) {
-		//generateInventory();
-		//makeConnection();
-		ProductsDAO productsDAO = new ProductsDAOImpl();
-		//productsDAO.printById();
-		productsDAO.printBy(5);
 		
+		Wallet wallet = new Wallet();
+		System.out.println(wallet);
+
+//		ProductsDAO productsDAO = new ProductsDAOImpl();
+//
+//		
 //		Scanner custInput = new Scanner(System.in);
 //		
-//		giveOptions();
+//		giveOriginalOptions();
 //		int custChoice = custInput.nextInt();
-//		printAllProducts();
-		
-		//selectOption(custChoice);
+//		productsDAO.printBy(custChoice);
 		
 	}
 	
-	//  Gets inventory data from file and stores it as objects in the program
-	//  I found this solution online
-//	static void generateInventory() {
-//		String csvFile = "survival_store_inventory.csv";
-//		BufferedReader br = null;
-//		//CSVReader br = null;
-//		String line = "";
-//		
-//		try {
-//			
-//			br = new BufferedReader(new FileReader(csvFile));
-//			//CSVReader br = new CSVReader(new StringReader(csvFile));
-//			line = br.readLine();  // Throws out column headers
-//			
-//			while ((line = br.readLine()) != null) {
-//				
-//				String[] splitByQuotes = line.split("\"");
-//				String lineNoQuotes;
-//				// If more than one element, then there should be 3 elements
-//				//    that were separated by the quotes.
-//				if (splitByQuotes.length > 1) {
-//					splitByQuotes[1] = splitByQuotes[1].replaceAll(",", "");
-//					lineNoQuotes = splitByQuotes[0] + splitByQuotes[1] + splitByQuotes[2];
-//				}
-//				else {lineNoQuotes = splitByQuotes[0];}
-//				
-//				String[] product = lineNoQuotes.split(",");
-//				
-//				String priceString = product[2].substring(1);
-//				double price = Double.parseDouble(priceString);
-//				int number_in_stock = Integer.parseInt(product[3]);
-//				
-////				System.out.println("Product category = " + product[0] + "  name = " +
-////						product[1] + "   price = " + product[2] + "   number = " + product[3]);
-//				Product newProduct = new Product(product[0], product[1], price, number_in_stock);
-//				allProducts.add(newProduct);
-//			}
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		} finally {
-//			if (br != null) {
-//				try {
-//					br.close();
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}
-//			
-//	}
-	
-	static void giveOptions() {
+	static void giveOriginalOptions() {
 		System.out.println("Welcome to the Survival Store!");
 		System.out.println("What would you like to do?");
 		System.out.println("");
@@ -96,30 +42,15 @@ public class SurvivalStore {
 		System.out.println("");
 	}
 	
-	void selectOption(int custChoice) {
-		switch (custChoice) {
-		case 1: printAllProducts();
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
-		}
+	static void giveOptions() {
+		System.out.println("");
+		System.out.println("Choose one of the following options:");
+		System.out.println("");
+		System.out.println("1  Sort the products in a different way");
+		System.out.println("2  Add something to your shopping cart");
+		System.out.println("3  Display your shopping cart");
+		System.out.println("4  Display amount of money in your Wallet ");
 	}
-	
-	static void printAllProducts() {
-		for (Product product: allProducts) {
-			System.out.println(product);
-			System.out.println("");
-		}
-	}
-	
-//	void sortProducts() {
-//		allProducts.sort
-//	}
+
 
 }

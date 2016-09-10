@@ -1,7 +1,6 @@
 package survivalStore;
 
 public class Product {
-	//private static int idGenerator = 1;
 	public int id;
 	public String category;
 	public String name;
@@ -9,8 +8,6 @@ public class Product {
 	public int num_in_stock;
 	
 	Product(int id, String category, String name, Double price, int num_in_stock) {
-		//this.id = idGenerator;
-		//idGenerator++;
 		this.id = id;
 		this.category = category;
 		this.name = name;
