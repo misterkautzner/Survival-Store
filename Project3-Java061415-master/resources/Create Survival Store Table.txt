@@ -1,0 +1,20 @@
+DROP DATABASE `survival_store`;
+
+CREATE DATABASE survival_store;
+
+USE survival_store;
+
+SHOW TABLES;
+
+
+
+
+
+CREATE TABLE products (
+Id INT NOT NULL AUTO_INCREMENT,
+Category VARCHAR(60) NOT NULL,
+Name VARCHAR(60) NOT NULL,
+Price DOUBLE NOT NULL,
+Num_in_Stock INT NOT NULL,
+PRIMARY KEY (ID)
+);
