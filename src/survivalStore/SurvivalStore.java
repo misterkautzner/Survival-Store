@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class SurvivalStore {
 	static ArrayList<Product> allProducts = new ArrayList<Product>();
+	static ArrayList<Product> shoppingCart = new ArrayList<Product>();
 	
 	public static void main(String[] args) {
 		

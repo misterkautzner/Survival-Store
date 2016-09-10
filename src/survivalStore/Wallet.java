@@ -4,13 +4,11 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Wallet {
-	double money;
+	private double money;
 	
 	Wallet() {
 		money = Math.random();
 		money = Math.floor(money*1000000)/100;
-		
-		System.out.println(money);
 	}
 	
 	public String toString() {
@@ -19,4 +17,8 @@ public class Wallet {
 		return walletString;
 	}
 
+	public void spend(Double amount) {
+		money -= amount;
+	}
+	
 }
