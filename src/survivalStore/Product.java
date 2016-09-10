@@ -69,7 +69,7 @@ public class Product {
 		//  The following composes the string to be printed.
 		//  Some fields have their pieces in different orders
 		//     depending on whether it should be right or left aligned.
-		String str = "ID:  " + id + idSpaces + 
+		String str = "ID:  " + idSpaces + id + 
 				"    Category:  " + category + categorySpaces + 
 				"    Name:  " + name + nameSpaces + 
 				"    Price:  " + priceSpaces + "$" + price +
