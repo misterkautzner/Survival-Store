@@ -5,18 +5,35 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class SurvivalStore {
-	static ArrayList<Product> allProducts = new ArrayList<Product>();
-	static ArrayList<Product> shoppingCart = new ArrayList<Product>();
+	public static ArrayList<Product> allProducts = new ArrayList<Product>();
 	
 	public static void main(String[] args) {
-		
 		Wallet wallet = new Wallet();
-		System.out.println(wallet);
+		ShoppingCart shoppingCart = new ShoppingCart();
+		ProductsDAO productsDAO = new ProductsDAOImpl();
+		allProducts = (ArrayList<Product>) productsDAO.listBy(1);
+		System.out.println("Welcome to the Survival Store!");
+		
+		Scanner custInput = new Scanner(System.in);
+		giveMainOptions();
+		int custChoice = custInput.nextInt();
+		selectMainOptions(custChoice);
+//		shoppingCart.add(allProducts.get(1), 2);
+//		shoppingCart.add(allProducts.get(5), 3);
+//		shoppingCart.add(allProducts.get(8), 5);
+//		
+//		shoppingCart.display();
+//		shoppingCart.remove(allProducts.get(8), 2);
+		
+		//shoppingCart.buy(allProducts.get(5), 2, wallet, productsDAO);
+		allProducts = (ArrayList<Product>) productsDAO.listBy(1);
+//		shoppingCart.display();
+//		System.out.println(wallet);
 
-//		ProductsDAO productsDAO = new ProductsDAOImpl();
 //
 //		
 //		Scanner custInput = new Scanner(System.in);
@@ -27,11 +44,10 @@ public class SurvivalStore {
 		
 	}
 	
-	static void giveOriginalOptions() {
-		System.out.println("Welcome to the Survival Store!");
+	
+	static void giveMainOptions() {
+		System.out.println("");
 		System.out.println("What would you like to do?");
-		System.out.println("");
-		System.out.println("");
 		System.out.println("Please enter a number corresponding to one of the options below:");
 		System.out.println("");
 		System.out.println("1  See all products");
@@ -43,6 +59,14 @@ public class SurvivalStore {
 		System.out.println("");
 	}
 	
+	static void selectMainOptions(int choice) {
+		switch (choice) {
+			case 1:
+				break;
+			default: break;
+		}
+	}
+	
 	static void giveOptions() {
 		System.out.println("");
 		System.out.println("Choose one of the following options:");
@@ -52,6 +76,8 @@ public class SurvivalStore {
 		System.out.println("3  Display your shopping cart");
 		System.out.println("4  Display amount of money in your Wallet ");
 	}
+	
+
 
 
 }

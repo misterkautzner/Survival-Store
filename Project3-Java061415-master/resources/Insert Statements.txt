@@ -1,7 +1,7 @@
 insert into products (category, name, price, num_in_stock) values ('food', 'Datrex 2400 Calorie Food Bar', 5.90, 173);
 insert into products (category, name, price, num_in_stock) values ('food','Datrex 3600 Calorie Food Bar', 7.94, 201);
-insert into inventory (category, name, price, num_in_stock) values ('food', 'Mainstay 1200-Calorie Food Bars - CASE of 30', 162.91, 50);
-insert into inventory (category, name, price, num_in_stock) values ('tools', '12-in-1 Stainless Steel Swiss-Style Pocket Knife', 3.94, 87);
+insert into products (category, name, price, num_in_stock) values ('food', 'Mainstay 1200-Calorie Food Bars - CASE of 30', 162.91, 50);
+insert into products (category, name, price, num_in_stock) values ('tools', '12-in-1 Stainless Steel Swiss-Style Pocket Knife', 3.94, 87);
 insert into products (category, name, price, num_in_stock) values ('food ','EasyPrep Lasagna - Pouch', 9.95, 180);
 insert into products (category, name, price, num_in_stock) values ('food', 'Saratoga Farms Freeze Dried Sharp Cheddar Cheese', 49.94, 190);
 insert into products (category, name, price, num_in_stock) values ('first aid and medical', 'IOSAT - Radiation Protection Tablets', 20.94, 154);

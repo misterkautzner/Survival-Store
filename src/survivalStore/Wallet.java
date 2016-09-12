@@ -16,6 +16,10 @@ public class Wallet {
 		String walletString = "Your wallet contains:   $" + moneyString;
 		return walletString;
 	}
+	
+	public double getBalance() {
+		return money;
+	}
 
 	public void spend(Double amount) {
 		money -= amount;

@@ -79,5 +79,22 @@ public class ProductsDAOImpl implements ProductsDAO {
 			System.out.println(product);
 		}
 	}
+	
+	public void buyUpdate(Product prod) {
+
+		String sql = "UPDATE products SET num_in_stock = " + prod.num_in_stock + " WHERE id = " + prod.id + ";";
+
+		Connection connection = null;
+		try {
+			connection = getConnection();
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.executeUpdate();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} finally {
+			closeConnection(connection);
+		}
+	}
 
 }

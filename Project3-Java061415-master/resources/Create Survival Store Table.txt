@@ -7,9 +7,6 @@ USE survival_store;
 SHOW TABLES;
 
 
-
-
-
 CREATE TABLE products (
 Id INT NOT NULL AUTO_INCREMENT,
 Category VARCHAR(60) NOT NULL,

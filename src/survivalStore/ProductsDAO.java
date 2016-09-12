@@ -7,4 +7,6 @@ public interface ProductsDAO {
 	public List<Product> listBy(int sorter);
 	
 	public void printBy(int sorter);
+	
+	public void buyUpdate(Product prod);
 }
