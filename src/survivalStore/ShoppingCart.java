@@ -9,6 +9,9 @@ public class ShoppingCart {
 		System.out.println("");
 		System.out.println("Shopping Cart:");
 		System.out.println("");
+		if (shoppingCart.isEmpty()) {
+			System.out.println("The shopping cart is empty");
+		}
 		for (Product product: shoppingCart) {
 			System.out.println(product);
 		}
@@ -26,7 +29,7 @@ public class ShoppingCart {
 		return numInCart;
 	}
 	
-	public void add(Product product, int quantity) {
+	public int add(Product product, int quantity) {
 		//  The items in the cart are also counted in stock.  Let's not double count!
 		//  We can only add items to the cart if they aren't already in it.
 		if (product.num_in_stock - numInCart(product) >= quantity) {
@@ -34,13 +37,20 @@ public class ShoppingCart {
 				shoppingCart.add(product);
 				// Must take away from Database
 			}
-		} else {System.out.println("Sorry.  We don't have that many in stock.");}
+			return quantity;
+		} else {System.out.println("Sorry.  We don't have that many in stock.");
+		return 0;}
 	}
 	
-	public void remove(Product product, int quantity) {
+	public int remove(Product product, int quantity) {
+		int count = 0;
 		for (int i = 0; i < quantity; i++) {
-			shoppingCart.remove(product);
+			if (shoppingCart.contains(product)) {
+				shoppingCart.remove(product);
+				count++;
+			} else {break;}
 		}
+		return count;
 	}
 	public void buy(Product product, int quantity, Wallet wallet, ProductsDAO productsDAO) {
 		System.out.println("");

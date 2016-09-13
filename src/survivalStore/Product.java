@@ -74,7 +74,7 @@ public class Product {
 				"    Category:  " + category + categorySpaces + 
 				"    Name:  " + name + nameSpaces + 
 				"    Price:  " + priceSpaces + "$" + priceStr +
-				"    Num_In_Stock:  " + numStockSpaces + num_in_stock;
+				"    Inventory:  " + numStockSpaces + num_in_stock;
 		return str;
 		// Damn I'm good!
 	}
