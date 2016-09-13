@@ -1,11 +1,12 @@
 package survivalStore;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ShoppingCart {
 	private static ArrayList<Product> shoppingCart = new ArrayList<Product>();
 	
-	public void display() {
+	public void display(Scanner input, Wallet wallet, ProductsDAO productsDAO) {
 		System.out.println("");
 		System.out.println("Shopping Cart:");
 		System.out.println("");
@@ -16,6 +17,46 @@ public class ShoppingCart {
 			System.out.println(product);
 		}
 		System.out.println("");
+		shoppingCartMenu(input, wallet, productsDAO);
+	}
+	
+	public void shoppingCartMenu(Scanner input, Wallet wallet, ProductsDAO productsDAO) {
+		System.out.println("What would you like to do?");
+		System.out.println("");
+		System.out.println("1  Buy a product in the cart");
+		System.out.println("2  Remove a product from the cart");
+		System.out.println("3  Return to previous menu");
+		System.out.println("");
+		int cartChoice = input.nextInt();
+		int idNum;
+		Product p;
+		if (cartChoice == 1) {
+			System.out.println("Enter the ID of the product you would like to buy:");
+			System.out.println("");
+			idNum = input.nextInt();
+			// Find the product they want.
+			p = SurvivalStore.findByID(idNum);
+			if (p == null)
+				return;
+			System.out.println("How many " + p.name + "s would you like to buy?");
+			int buyNum;
+			buyNum = input.nextInt();
+			buy(p, buyNum, wallet, productsDAO);
+		}
+		if (cartChoice == 2) {
+			System.out.println("Enter the ID of the product you would like to remove:");
+			System.out.println("");
+			idNum = input.nextInt();
+			// Find the product they want.
+			p = SurvivalStore.findByID(idNum);
+			if (p == null)
+				return;
+			System.out.println("How many " + p.name + "s would you like to remove?");
+			int removeNum;
+			removeNum = input.nextInt();
+			removeNum = remove(p, removeNum);
+			System.out.println(removeNum + " removed from cart.");
+		}
 	}
 	
 	//  Returns the number of this product that are already in the shopping cart
